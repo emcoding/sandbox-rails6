@@ -1,0 +1,7 @@
+//alert("hallo I'm in update")
+document.getElementById('<%= dom_id(@user, 'inline_form') %>').remove()
+document.getElementById('<%= dom_id(@user) %>').innerHTML = "<%= j render @user %>"
+document.getElementById('<%= dom_id(@user) %>').style.display = 'table-row'
+
+
+

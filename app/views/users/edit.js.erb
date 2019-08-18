@@ -6,5 +6,5 @@
 <%#= link_to 'Back', users_path %>
 let editor = document.getElementById('<%= dom_id(@user) %>');
 console.log(editor)
-editor.insertAdjacentHTML('afterend', "<%= j render 'form', user: @user %>")
+editor.insertAdjacentHTML('afterend', "<%= j render 'inline_form', user: @user %>")
 //editor.style.display = 'none'

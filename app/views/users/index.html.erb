@@ -2,29 +2,30 @@
 
 <h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="divTable greyGridTable">
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableHead">First name</div>
+      <div class="divTableHead">Last name</div>
+      <div class="divTableHead">Email address</div>
+      <div class="divTableHead">Actions</div>
+    </div>
+  </div>
+  <div class="divTableBody">
     <% @users.each do |user| %>
-      <%= content_tag :tr, id: dom_id(user) do %>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= content_tag :div, class: 'divTableRow', id: dom_id(user) do %>
+        <div class="divTableCell"><%= user.first_name %></div>
+        <div class="divTableCell"><%= user.last_name %></div>
+        <div class="divTableCell"><%= user.email %></div>
+        <div class="divTableCell">
+          <%= link_to 'Show', user %>
+          <%= link_to 'Edit', edit_user_path(user), remote: true %>
+          <%= link_to 'Destroy', user, method: :delete, data: {confirm: 'Are you sure?'} %>
+        </div>
       <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <br>
 

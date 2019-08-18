@@ -14,14 +14,14 @@
 
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <%= content_tag :tr, id: dom_id(user) do %>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user), remote: true %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

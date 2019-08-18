@@ -4,7 +4,8 @@
 
 //<%#= link_to 'Show', @user %> |
 <%#= link_to 'Back', users_path %>
-let editor = document.getElementById('<%= dom_id(@user) %>');
-console.log(editor)
-editor.insertAdjacentHTML('afterend', "<%= j render 'inline_form', user: @user %>")
-//editor.style.display = 'none'
+let editee = document.getElementById('<%= dom_id(@user) %>');
+console.log(editee)
+editee.insertAdjacentHTML('afterend', "<%= j render 'inline_form', user: @user %>")
+//hide the table row while editing:
+editee.style.display = 'none'
